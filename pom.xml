@@ -26,6 +26,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- runtime dependencies -->
+        <apache.commons.codec.version>[1.17.0,1.999.999]</apache.commons.codec.version>
         <apache.commons.lang.version>[3.12.0,3.999.999]</apache.commons.lang.version>
         <slf4j.version>[1.7.36,1.7.999]</slf4j.version>
         <log4j.version>[2.20.0,2.999.999]</log4j.version>
@@ -77,6 +78,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apache.commons.lang.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${apache.commons.codec.version}</version>
         </dependency>
 
         <dependency>
