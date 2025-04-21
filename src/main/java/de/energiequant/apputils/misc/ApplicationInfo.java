@@ -24,4 +24,6 @@ public interface ApplicationInfo {
     License getEffectiveLicense();
 
     Optional<String> getDisclaimer();
+
+    Optional<String> getDisclaimerAcceptanceText();
 }
