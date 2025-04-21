@@ -1,0 +1,6 @@
+.idea
+*.iml
+
+target
+src-gen
+dependency-reduced-pom.xml
