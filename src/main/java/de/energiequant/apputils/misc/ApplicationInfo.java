@@ -1,6 +1,7 @@
 package de.energiequant.apputils.misc;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import de.energiequant.apputils.misc.attribution.CopyrightNoticeProvider;
@@ -20,6 +21,8 @@ public interface ApplicationInfo {
     String getApplicationVersion();
 
     String getApplicationCopyright();
+
+    List<String> getExtraInfo();
 
     License getEffectiveLicense();
 
