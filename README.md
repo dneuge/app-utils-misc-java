@@ -30,7 +30,7 @@ All source code and original resources within this project are released under [M
 project) are subject to their own respective licenses which can affect distribution, particularly in binary/packaged
 form.
 
-[`src/resources/main/de/energiequant/apputils/misc/attribution/`](src/resources/main/de/energiequant/apputils/misc/attribution/) contains commonly used license
+[`src/main/resources/de/energiequant/apputils/misc/attribution/`](src/main/resources/de/energiequant/apputils/misc/attribution/) contains commonly used license
 texts which are (self-)copyrighted by their respective owners and have been kept unaltered, apart from adding necessary markup/notes to be properly displayed
 using the components of this library. Inclusion, distribution and display/reproduction of those license texts is done in order to ease achieving license
 conformity for components distributed under those licenses that are possibly being included to applications using this library. No additional copyright is
