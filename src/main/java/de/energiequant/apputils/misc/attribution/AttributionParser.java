@@ -183,7 +183,7 @@ public class AttributionParser {
         Handler handler = new Handler();
 
         String filePath = attributionRelativeClass.getPackage().getName().replace('.', '/') + "/attribution.xml";
-        InputStream is = AttributionParser.class.getClassLoader().getResourceAsStream(filePath);
+        InputStream is = attributionRelativeClass.getClassLoader().getResourceAsStream(filePath);
 
         try {
             SAXParserFactory.newInstance().newSAXParser().parse(is, handler);
