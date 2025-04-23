@@ -16,7 +16,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class CopyrightNotice implements CopyrightNoticeProvider {
+public class CopyrightNotices implements CopyrightNoticeProvider {
     // TODO: is there any way to automatically collect this information?
 
     private static final Pattern PATTERN_SURROUNDING_EMPTINESS = Pattern.compile("^\\R*(.*?)\\R*$", Pattern.DOTALL);
@@ -38,7 +38,7 @@ public class CopyrightNotice implements CopyrightNoticeProvider {
 
         private boolean encounteredRootNode;
 
-        private final CopyrightNotice collector = new CopyrightNotice();
+        private final CopyrightNotices collector = new CopyrightNotices();
 
         @Override
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
@@ -146,7 +146,7 @@ public class CopyrightNotice implements CopyrightNoticeProvider {
         return notice;
     }
 
-    public static CopyrightNotice loadXML(Class<?> attributionRelativeClass) {
+    public static CopyrightNotices loadXML(Class<?> attributionRelativeClass) {
         XmlParserHandler handler = new XmlParserHandler();
 
         String filePath = attributionRelativeClass.getPackage().getName().replace('.', '/') + "/copyright-notices.xml";
