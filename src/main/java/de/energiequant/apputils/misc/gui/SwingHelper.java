@@ -6,12 +6,14 @@ import java.awt.Insets;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.lang.reflect.InvocationTargetException;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class SwingHelper {
     public static JLabel stylePlain(JLabel label) {
@@ -78,5 +80,32 @@ public class SwingHelper {
         }
 
         return new Insets(sumTop, sumLeft, sumBottom, sumRight);
+    }
+
+    /**
+     * Runs the given action in Swing's Event Dispatch thread and waits until it has completed.
+     * Safe to be called from the Event Dispatch thread itself.
+     *
+     * @param action action to be run
+     * @throws InterruptedException if interrupted while waiting for the Event Dispatch thread
+     */
+    public static void runSynchronouslyInEventDispatchThread(Runnable action) throws InterruptedException {
+        if (SwingUtilities.isEventDispatchThread()) {
+            action.run();
+            return;
+        }
+
+        try {
+            SwingUtilities.invokeAndWait(action);
+        } catch (InvocationTargetException ex) {
+            // thrown if the action itself threw an exception; see invokeAndWait JavaDoc
+            throw new InvocationFailed("action failed (run by Swing Event Dispatcher thread)", ex);
+        }
+    }
+
+    private static class InvocationFailed extends RuntimeException {
+        InvocationFailed(String msg, Throwable cause) {
+            super(msg, cause);
+        }
     }
 }
