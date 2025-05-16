@@ -7,7 +7,7 @@
     <artifactId>app-utils-misc</artifactId>
     <name>Misc Application Utilities for Java</name>
     <description>commonly needed utilities for applications written in Java</description>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <url>https://github.com/dneuge/app-utils-misc-java</url>
