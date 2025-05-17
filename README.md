@@ -15,6 +15,7 @@ as well.
 A possibly incomplete list of (published) applications currently depending on this library:
 
 - [Legacy status proxy for VATSIM](https://github.com/dneuge/legacy-status-proxy-vatsim) (where this library was originally extracted from)
+- [LiMa-MF Flight Simulation Panel Connector](https://github.com/dneuge/lima-mf-panel-connector)
 
 ## Compatibility
 
