@@ -145,7 +145,6 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.plugin.compiler.version}</version>
                 <configuration>
-                    <proc>only</proc>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.apache.logging.log4j</groupId>
